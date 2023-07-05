@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+
+{% for i in movies_list %}
+<!--Method 1-->
+<!--<a href="movie/{{i.id}}"> {{i.name}}</a><br> -->
+<!--method 2-->
+<img src="{{i.img.url}}" alt="" width="200px" height="300px">
+<a href="{% url 'movieapp:details' i.id %}"> {{i.name}}</a><br>
+{% endfor %}
+{% endblock %}
